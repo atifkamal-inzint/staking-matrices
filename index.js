@@ -26,6 +26,10 @@ const Data = mongoose.model("Data", dataSchema);
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 // Fetch data from external APIs and save to MongoDB
 const fetchDataAndSave = async () => {
