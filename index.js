@@ -62,9 +62,6 @@ const fetchDataAndSave = async () => {
   }
 };
 
-// Fetch data and save every 4 hours
-setInterval(fetchDataAndSave, 4 * 60 * 60 * 1000);
-
 // Route to handle GET requests to fetch all data
 app.get("/api/staking", async (req, res) => {
   try {
@@ -82,5 +79,7 @@ app.get("/api/staking", async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
+  // Fetch data and save every 4 hours
+  setInterval(fetchDataAndSave, 4 * 60 * 60 * 1000);
   console.log(`Server is running on port ${PORT}`);
 });
