@@ -80,6 +80,6 @@ app.get("/api/staking", async (req, res) => {
 // Start the server
 app.listen(PORT, () => {
   // Fetch data and save every 4 hours
-  setInterval(fetchDataAndSave, 4 * 60 * 60 * 1000);
+  setInterval(fetchDataAndSave, 2 * 60 * 1000);
   console.log(`Server is running on port ${PORT}`);
 });
